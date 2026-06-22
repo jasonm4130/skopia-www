@@ -1,0 +1,6 @@
+# Standalone config for this repo only (no `packages:` key — skopia-www is NOT a member of
+# the product repo's workspace). pnpm 11 reads build-script approval from here.
+allowBuilds:
+  esbuild: true # Astro / Vite bundler
+  workerd: true # wrangler dev + deploy (Cloudflare Workers runtime)
+  sharp: false # transitive dep we don't use — the site has no raster images

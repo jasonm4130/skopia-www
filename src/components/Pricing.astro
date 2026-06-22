@@ -1,0 +1,48 @@
+<!-- ===== PRICING / CALCULATOR ===== -->
+<div id="pricing" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#6a7184;margin-bottom:14px;">Pricing</div>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:38px;letter-spacing:-.025em;color:#fff;margin:0 0 12px;">Skopia is free. You just pay Cloudflare.</h2>
+    <p style="font-size:16px;color:#8b92a4;margin:0;">The software is AGPL-3.0 licensed and open source. Your only bill comes from Cloudflare &mdash; and it&apos;s tiny.</p>
+  </div>
+  <div style="display:flex;gap:18px;align-items:stretch;">
+    <!-- self host card -->
+    <div style="flex:1;background:#12151d;border:1px solid #2a3550;border-radius:16px;padding:34px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#9fb4ff;margin-bottom:8px;">Self-host</div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;color:#fff;letter-spacing:-.02em;">$0</span>
+        <span style="font-size:15px;color:#8b92a4;">+ your Cloudflare usage</span>
+      </div>
+      <p style="font-size:14px;color:#8b92a4;line-height:1.6;margin:0 0 24px;">Everything, forever. Deploy to your own account and own the whole stack.</p>
+      <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/jasonm4130/skopia" style="display:block;text-align:center;background:#4d86ff;color:#fff;padding:13px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;margin-bottom:24px;">Deploy to Cloudflare &#8594;</a>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <span style="display:flex;align-items:center;gap:10px;font-size:14px;color:#cfd4e0;"><span style="color:#2bd888;font-weight:700;">&#10003;</span> Unlimited sites &amp; events</span>
+        <span style="display:flex;align-items:center;gap:10px;font-size:14px;color:#cfd4e0;"><span style="color:#2bd888;font-weight:700;">&#10003;</span> Full data ownership &amp; export</span>
+        <span style="display:flex;align-items:center;gap:10px;font-size:14px;color:#cfd4e0;"><span style="color:#2bd888;font-weight:700;">&#10003;</span> Realtime, geography, events</span>
+        <span style="display:flex;align-items:center;gap:10px;font-size:14px;color:#cfd4e0;"><span style="color:#2bd888;font-weight:700;">&#10003;</span> Community support on GitHub</span>
+      </div>
+    </div>
+    <!-- calculator card -->
+    <div style="flex:1.15;background:linear-gradient(150deg,#0e1119,#101522);border:1px solid #20252f;border-radius:16px;padding:34px;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#fff;margin-bottom:6px;">Estimate your Cloudflare bill</div>
+      <p style="font-size:13.5px;color:#8b92a4;margin:0 0 30px;">Drag to your monthly pageviews. Skopia itself stays $0.</p>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;">
+        <div>
+          <div style="font-size:13px;color:#8b92a4;margin-bottom:6px;">Monthly pageviews</div>
+          <div id="calc-pv" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:#fff;">1M</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:13px;color:#8b92a4;margin-bottom:6px;">Est. Cloudflare / mo</div>
+          <div id="calc-cost" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:#2bd888;">$0</div>
+        </div>
+      </div>
+      <input id="calc-slider" type="range" min="0" max="8" step="1" value="3" style="width:100%;margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a7184;margin-bottom:28px;">
+        <span>10K</span><span>3M</span><span>100M</span>
+      </div>
+      <div id="calc-note" style="background:#0a0c11;border:1px solid #20252f;border-radius:11px;padding:18px 20px;font-size:13.5px;color:#9aa1b2;line-height:1.6;">
+        You&apos;re comfortably inside Cloudflare&apos;s free tier &mdash; $0/mo. Skopia is open source, so there&apos;s nothing else to pay.
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+---
+// The Skopia three-bar logomark (CSS-drawn). Used in Nav (lg) and Footer (sm).
+interface Props {
+  size?: 'lg' | 'sm';
+}
+const { size = 'lg' } = Astro.props;
+const cfg =
+  size === 'lg'
+    ? { gap: '2.5px', h: '2.5px', w: ['18px', '13px', '16px'] }
+    : { gap: '2px', h: '2px', w: ['15px', '11px', '13px'] };
+---
+
+<div style={`display:flex;flex-direction:column;gap:${cfg.gap};`}>
+  <div style={`width:${cfg.w[0]};height:${cfg.h};border-radius:2px;background:#4d86ff;`}></div>
+  <div style={`width:${cfg.w[1]};height:${cfg.h};border-radius:2px;background:#4d86ff;opacity:.7;`}></div>
+  <div style={`width:${cfg.w[2]};height:${cfg.h};border-radius:2px;background:#4d86ff;opacity:.45;`}></div>
+</div>

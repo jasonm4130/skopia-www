@@ -1,0 +1,60 @@
+---
+// FAQ data — ported from src/marketing/index.ts. First item renders open (matches design);
+// the accordion toggling lives in /scripts/calculator.js.
+const FAQ = [
+  {
+    q: 'Where does my data live?',
+    a: 'In your own Cloudflare account, inside a D1 database you provision. Skopia has no central server and never sees your visitors — the data never leaves your infrastructure.',
+  },
+  {
+    q: 'Is it really compliant without a consent banner?',
+    a: 'Skopia sets no cookies, stores no personal data, and never tracks people across sites — so in most jurisdictions no consent banner is required. As always, confirm your specific obligations with counsel.',
+  },
+  {
+    q: 'What does it actually cost to run?',
+    a: 'The software is free and AGPL-3.0 licensed. You pay Cloudflare directly — $0 on the free tier (up to roughly 3M pageviews/mo), and around $5/mo once you pass that ceiling (the Workers Paid base plan covers up to ~10M pageviews/mo).',
+  },
+  {
+    q: 'How big is the tracking script?',
+    a: "1.9 KB on the wire. It loads asynchronously, is cache-first, and never blocks rendering — your Lighthouse score won't notice it.",
+  },
+  {
+    q: 'Can I migrate from Google Analytics or Plausible?',
+    a: 'Yes. Import historical data from a CSV export and Skopia maps the common metrics — visitors, pageviews, sources and pages — into your new dashboard.',
+  },
+  {
+    q: 'Do I have to manage a database?',
+    a: "No. `skopia deploy` provisions Cloudflare D1 for you. There's nothing to patch, scale, or back up — Cloudflare handles the infrastructure.",
+  },
+];
+---
+
+<!-- ===== FAQ ===== -->
+<div id="faq" style="background:#0c0e14;border-top:1px solid #161a22;">
+  <div style="max-width:820px;margin:0 auto;padding:96px 32px;">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:34px;letter-spacing:-.02em;color:#fff;margin:0 0 44px;text-align:center;">Questions, answered.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      {
+        FAQ.map((item, i) => (
+          <div class="faq-item" style="background:#12151d;border:1px solid #20252f;border-radius:12px;overflow:hidden;">
+            <div class="faq-btn" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;user-select:none;">
+              <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16.5px;color:#fff;">{item.q}</span>
+              <span
+                class="faq-icon"
+                style={`font-family:'Space Grotesk',sans-serif;font-size:22px;${i === 0 ? 'color:#4d86ff;transform:rotate(45deg);' : 'color:#6a7184;'}transition:transform .2s,color .2s;line-height:1;`}
+              >
+                +
+              </span>
+            </div>
+            <div
+              class="faq-body"
+              style={`display:${i === 0 ? 'block' : 'none'};padding:0 24px 22px;font-size:14.5px;line-height:1.65;color:#9aa1b2;`}
+            >
+              {item.a}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

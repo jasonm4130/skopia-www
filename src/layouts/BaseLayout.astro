@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="stylesheet" href="/fonts.css" />
+  </head>
+  <body>
+    <slot />
+    <!-- External same-origin script (CSP script-src 'self'); is:inline keeps Astro from bundling it. -->
+    <script is:inline src="/scripts/calculator.js" defer></script>
+  </body>
+</html>

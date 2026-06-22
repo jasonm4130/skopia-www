@@ -1,0 +1,12 @@
+{
+  // Pure static-assets Worker (no `main`, no binding) — serves Astro's ./dist output.
+  // Maintainer-only deploy target: `skopia-marketing` → skopia.dev. Forkers never touch this.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "skopia-marketing",
+  "compatibility_date": "2026-06-22",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

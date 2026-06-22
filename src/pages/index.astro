@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import ProductShot from '../components/ProductShot.astro';
+import Features from '../components/Features.astro';
+import Comparison from '../components/Comparison.astro';
+import Pricing from '../components/Pricing.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Skopia — Privacy-first analytics on Cloudflare"
+  description="Open-source, cookieless web analytics that runs on your own Cloudflare account. One command to deploy."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <TrustStrip />
+    <HowItWorks />
+    <ProductShot />
+    <Features />
+    <Comparison />
+    <Pricing />
+    <Faq />
+    <Cta />
+  </main>
+  <Footer />
+</BaseLayout>
