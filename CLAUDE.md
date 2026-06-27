@@ -41,3 +41,9 @@ of the product repo's workspace, so the product's one-click Deploy button stays 
 Target: Workers Static Assets, Worker `skopia-marketing` → `skopia.dev`. Forkers never touch
 this — they only use the product repo's Deploy button. Custom-domain + Workers Builds wiring
 is done once in the Cloudflare dashboard.
+
+**Workers Builds requires the build variable `PNPM_VERSION=11`** (Worker → Settings → Build →
+*Variables & Secrets*). The build image defaults to pnpm 10.11.1, which can't read this repo's
+pnpm-11 `allowBuilds` approval in `pnpm-workspace.yaml` and fails `pnpm install` without it.
+The zone (`www` → apex 301, HSTS, baseline settings) is managed in the `jasonm4130-cf`
+Terraform repo, not here.
