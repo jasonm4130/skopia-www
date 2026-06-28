@@ -9,7 +9,11 @@
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   },
-  // Apex serves the marketing site (product app lives at app.skopia.dev).
-  // www → apex 301 is a zone Redirect Rule, not a Worker route.
-  "routes": [{ "pattern": "skopia.dev", "custom_domain": true }]
+  // Apex + www are both bound as custom domains (product app lives at app.skopia.dev).
+  // The www → apex 301 itself is a zone Redirect Rule in Terraform (jasonm4130-cf); binding
+  // www here just gives it edge resolution + a cert so that redirect can fire.
+  "routes": [
+    { "pattern": "skopia.dev", "custom_domain": true },
+    { "pattern": "www.skopia.dev", "custom_domain": true }
+  ]
 }
