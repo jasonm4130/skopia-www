@@ -39,3 +39,8 @@ button.
 pnpm wrangler login
 pnpm deploy     # build + wrangler deploy
 ```
+
+Pushing to `main` triggers **Workers Builds** (CI auto-deploy). It needs the build variable
+**`PNPM_VERSION=11`** (Worker → Settings → Build → *Variables & Secrets*) — the build image
+defaults to pnpm 10.11.1, which can't read this repo's pnpm-11 `allowBuilds` block in
+`pnpm-workspace.yaml` and fails `pnpm install` without it.
