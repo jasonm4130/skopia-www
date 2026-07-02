@@ -1,11 +1,11 @@
 <!-- ===== PRICING / CALCULATOR ===== -->
-<div id="pricing" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
+<div id="pricing" class="pricing-inner" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
   <div style="text-align:center;margin-bottom:56px;">
     <div style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#6a7184;margin-bottom:14px;">Pricing</div>
     <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:38px;letter-spacing:-.025em;color:#fff;margin:0 0 12px;">Skopia is free. You just pay Cloudflare.</h2>
     <p style="font-size:16px;color:#8b92a4;margin:0;">The software is AGPL-3.0 licensed and open source. Your only bill comes from Cloudflare &mdash; and it&apos;s tiny.</p>
   </div>
-  <div style="display:flex;gap:18px;align-items:stretch;">
+  <div class="pricing-cards" style="display:flex;gap:18px;align-items:stretch;">
     <!-- self host card -->
     <div style="flex:1;background:#12151d;border:1px solid #2a3550;border-radius:16px;padding:34px;">
       <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#9fb4ff;margin-bottom:8px;">Self-host</div>
@@ -46,3 +46,10 @@
     </div>
   </div>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .pricing-inner { padding: 64px 20px !important; }
+    .pricing-cards { flex-direction: column; gap: 16px !important; }
+  }
+</style>

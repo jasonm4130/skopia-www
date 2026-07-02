@@ -31,3 +31,11 @@ import Footer from '../components/Footer.astro';
   </main>
   <Footer />
 </BaseLayout>
+
+<style is:global>
+  /* Mobile type scale — section headings are set with large inline font-sizes
+     (34–46px); shrink them all in one place. Desktop is untouched. */
+  @media (max-width: 768px) {
+    h2 { font-size: 28px !important; line-height: 1.15 !important; }
+  }
+</style>
