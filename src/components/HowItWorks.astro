@@ -1,8 +1,8 @@
 <!-- ===== HOW IT WORKS ===== -->
-<div id="how" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
+<div id="how" class="how-section" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
   <div style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#6a7184;margin-bottom:14px;">Deploy in under a minute</div>
   <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:38px;letter-spacing:-.025em;color:#fff;margin:0 0 60px;max-width:600px;line-height:1.08;">No servers, no database, no maintenance window.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:52px;">
+  <div class="how-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:52px;">
     <div>
       <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#4d86ff;margin-bottom:18px;">01</div>
       <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;color:#fff;margin-bottom:11px;">Run one command</div>
@@ -20,3 +20,10 @@
     </div>
   </div>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .how-section { padding: 64px 20px !important; }
+    .how-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  }
+</style>

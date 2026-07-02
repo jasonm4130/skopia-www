@@ -1,6 +1,6 @@
 <!-- ===== TRUST STRIP ===== -->
 <div style="border-top:1px solid #161a22;border-bottom:1px solid #161a22;background:#0c0e14;">
-  <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:40px;padding:26px 32px;">
+  <div class="trust-inner" style="max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:40px;padding:26px 32px;">
     <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;color:#6a7184;white-space:nowrap;">Built on the Cloudflare stack</span>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <span style="font-size:13px;color:#9aa1b2;border:1px solid #20252f;padding:7px 14px;border-radius:8px;">Workers</span>
@@ -9,6 +9,13 @@
       <span style="font-size:13px;color:#9aa1b2;border:1px solid #20252f;padding:7px 14px;border-radius:8px;">R2</span>
       <span style="font-size:13px;color:#9aa1b2;border:1px solid #20252f;padding:7px 14px;border-radius:8px;">KV</span>
     </div>
-    <span style="margin-left:auto;font-size:13.5px;color:#8b92a4;white-space:nowrap;">Open source &middot; AGPL-3.0</span>
+    <span class="trust-meta" style="margin-left:auto;font-size:13.5px;color:#8b92a4;white-space:nowrap;">Open source &middot; AGPL-3.0</span>
   </div>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .trust-inner { flex-direction: column; align-items: flex-start !important; gap: 16px !important; padding: 22px 20px !important; }
+    .trust-meta { margin-left: 0 !important; }
+  }
+</style>

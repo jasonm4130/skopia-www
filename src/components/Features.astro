@@ -1,9 +1,9 @@
 <!-- ===== FEATURES (bento) ===== -->
-<div id="features" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
+<div id="features" class="features-section" style="max-width:1180px;margin:0 auto;padding:104px 32px;">
   <div style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#6a7184;margin-bottom:14px;">Why Skopia</div>
   <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:38px;letter-spacing:-.025em;color:#fff;margin:0 0 52px;max-width:560px;line-height:1.08;">Yours to own. Effortless to run.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    <div style="grid-column:span 2;background:linear-gradient(135deg,#12151d,#141a26);border:1px solid #2a3550;border-radius:14px;padding:30px 32px;position:relative;overflow:hidden;">
+  <div class="features-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div class="features-hero-card" style="grid-column:span 2;background:linear-gradient(135deg,#12151d,#141a26);border:1px solid #2a3550;border-radius:14px;padding:30px 32px;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-60px;right:-30px;width:240px;height:240px;background:radial-gradient(circle,rgba(77,134,255,.16),transparent 65%);"></div>
       <div style="width:32px;height:32px;border-radius:8px;background:#4d86ff;margin-bottom:20px;"></div>
       <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:10px;">Own every row of data</div>
@@ -42,3 +42,12 @@
     </div>
   </div>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .features-section { padding: 64px 20px !important; }
+    .features-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+    /* the first (span-2) bento tile becomes full width in a single column */
+    .features-hero-card { grid-column: auto !important; }
+  }
+</style>

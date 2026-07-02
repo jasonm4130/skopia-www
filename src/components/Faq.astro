@@ -31,7 +31,7 @@ const FAQ = [
 
 <!-- ===== FAQ ===== -->
 <div id="faq" style="background:#0c0e14;border-top:1px solid #161a22;">
-  <div style="max-width:820px;margin:0 auto;padding:96px 32px;">
+  <div class="faq-inner" style="max-width:820px;margin:0 auto;padding:96px 32px;">
     <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:34px;letter-spacing:-.02em;color:#fff;margin:0 0 44px;text-align:center;">Questions, answered.</h2>
     <div style="display:flex;flex-direction:column;gap:12px;">
       {
@@ -58,3 +58,9 @@ const FAQ = [
     </div>
   </div>
 </div>
+
+<style>
+  @media (max-width: 768px) {
+    .faq-inner { padding: 64px 20px !important; }
+  }
+</style>

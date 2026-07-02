@@ -52,4 +52,21 @@
       }
     });
   });
+
+  // Mobile nav — hamburger toggles the collapsed menu; tapping a link closes it.
+  // Selectors are unique to the nav, so no overlap with the calculator/FAQ handlers above.
+  var burger = document.querySelector('.nav-burger');
+  var navMenu = document.getElementById('nav-menu');
+  if (burger && navMenu) {
+    burger.addEventListener('click', function () {
+      var open = navMenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 })();
