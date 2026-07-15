@@ -2,7 +2,7 @@
 // CLIENT_SCRIPT (src/marketing/index.ts). External file → covered by CSP script-src 'self',
 // needs no inline-script hash. No frameworks, no deps.
 (function () {
-  // Stops cover key tier boundaries: free ceiling ~3M (100k/day WAE * 30), paid $5 up to 10M, overage above.
+  // Stops cover key tier boundaries: free ceiling ~0.9M pageviews/mo, paid $5 up to ~10M, overage above.
   var stops = [10000, 100000, 500000, 1000000, 3000000, 5000000, 10000000, 50000000, 100000000];
   function fmt(n) {
     if (n >= 1000000) return (n / 1000000).toString().replace(/\.0$/, '') + 'M';
@@ -10,11 +10,11 @@
     return String(n);
   }
   // Cost model per spec §9:
-  //   <= 3M/mo  -> $0 (Cloudflare free tier)
-  //   3M-10M    -> $5 (Workers Paid base plan)
-  //   > 10M     -> $5 + (pv - 10M)/1M * 0.55  (WAE + Workers overage)
+  //   <= 0.9M/mo -> $0 (Cloudflare free tier)
+  //   0.9M-10M   -> $5 (Workers Paid base plan)
+  //   > 10M      -> $5 + (pv - 10M)/1M * 0.55  (WAE + Workers overage)
   function calcCost(pv) {
-    if (pv <= 3000000) return 0;
+    if (pv <= 900000) return 0;
     if (pv <= 10000000) return 5;
     return Math.round(5 + (pv - 10000000) / 1000000 * 0.55);
   }
@@ -24,9 +24,9 @@
     document.getElementById('calc-pv').textContent = fmt(pv);
     document.getElementById('calc-cost').textContent = '$' + cost;
     document.getElementById('calc-note').textContent = cost === 0
-      ? "You're inside Cloudflare's free tier (up to ~3M events/mo) — $0/mo. Skopia is open source, so there's nothing else to pay."
+      ? "You're inside Cloudflare's free tier (roughly up to ~0.9M pageviews/mo) — $0/mo. Skopia is open source, so there's nothing else to pay."
       : cost === 5
-        ? "You're on the Workers Paid plan ($5/mo base). WAE and Workers capacity up to 10M events/mo are included — no meaningful overage."
+        ? "You're on Cloudflare's Workers Paid plan ($5/mo base) at this volume. Skopia stays free — you only pay Cloudflare for what you use."
         : 'Roughly $' + cost + '/mo on Cloudflare Workers + Analytics Engine at this volume. Skopia stays free — you only pay Cloudflare for what you use.';
   }
   var slider = document.getElementById('calc-slider');

@@ -4,27 +4,27 @@
 const FAQ = [
   {
     q: 'Where does my data live?',
-    a: 'In your own Cloudflare account, inside a D1 database you provision. Skopia has no central server and never sees your visitors — the data never leaves your infrastructure.',
+    a: 'In your own Cloudflare account. Raw events go to Workers Analytics Engine and daily rollups to a D1 database you provision — Skopia has no central server and never sees your visitors, so the data never leaves your infrastructure.',
   },
   {
     q: 'Is it really compliant without a consent banner?',
-    a: 'Skopia sets no cookies, stores no personal data, and never tracks people across sites — so in most jurisdictions no consent banner is required. As always, confirm your specific obligations with counsel.',
+    a: 'Skopia sets no cookies, stores no personal data by default, and never tracks people across sites — so in most jurisdictions no consent banner is required. As always, confirm your specific obligations with counsel.',
   },
   {
     q: 'What does it actually cost to run?',
-    a: 'The software is free and AGPL-3.0 licensed. You pay Cloudflare directly — $0 on the free tier (up to roughly 3M pageviews/mo), and around $5/mo once you pass that ceiling (the Workers Paid base plan covers up to ~10M pageviews/mo).',
+    a: "The software is free and AGPL-3.0 licensed. You pay Cloudflare directly — $0 on the free tier (roughly up to ~0.9M pageviews/mo), and around $5/mo on Cloudflare's Workers Paid plan once you pass that ceiling.",
   },
   {
     q: 'How big is the tracking script?',
-    a: "1.9 KB on the wire. It loads asynchronously, is cache-first, and never blocks rendering — your Lighthouse score won't notice it.",
+    a: "554 bytes gzipped (about 0.6 KB). It loads deferred and never blocks rendering — your Lighthouse score won't notice it.",
   },
   {
     q: 'Can I migrate from Google Analytics or Plausible?',
-    a: 'Yes. Import historical data from a CSV export and Skopia maps the common metrics — visitors, pageviews, sources and pages — into your new dashboard.',
+    a: "Not today — Skopia starts collecting from the day you deploy; there's no historical importer yet. You can run it alongside your current analytics during the switch.",
   },
   {
     q: 'Do I have to manage a database?',
-    a: "No. `skopia deploy` provisions Cloudflare D1 for you. There's nothing to patch, scale, or back up — Cloudflare handles the infrastructure.",
+    a: "No. The one-click Deploy to Cloudflare button provisions Cloudflare D1 (and the rest of the stack) for you. There's nothing to patch, scale, or back up — Cloudflare handles the infrastructure.",
   },
 ];
 ---
