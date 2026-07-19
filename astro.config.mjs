@@ -10,6 +10,8 @@ import { defineConfig } from 'astro/config';
 // cover (only 'unsafe-inline' / 'unsafe-hashes' do). The CSP is set instead via the
 // committed `public/_headers` file. See docs/CSP in the product repo plan.
 export default defineConfig({
+  // Canonical origin — lets BaseLayout build absolute canonical/OG URLs.
+  site: 'https://skopia.dev',
   output: 'static',
   outDir: './dist',
 });
