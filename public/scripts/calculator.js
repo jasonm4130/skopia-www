@@ -44,7 +44,7 @@
     btn.addEventListener('click', function () {
       var open = body.style.display === 'block';
       document.querySelectorAll('.faq-body').forEach(function (b) { b.style.display = 'none'; });
-      document.querySelectorAll('.faq-icon').forEach(function (ic) { ic.style.color = '#6a7184'; ic.style.transform = 'none'; });
+      document.querySelectorAll('.faq-icon').forEach(function (ic) { ic.style.color = '#7b8296'; ic.style.transform = 'none'; });
       if (!open) {
         body.style.display = 'block';
         icon.style.color = '#4d86ff';
