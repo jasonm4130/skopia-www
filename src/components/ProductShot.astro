@@ -6,53 +6,15 @@
       <p style="font-size:16px;color:#8b92a4;margin:0;">Nothing you don&apos;t. Realtime, top pages, sources and geography &mdash; clean and fast.</p>
     </div>
     <div style="border:1px solid #20252f;border-radius:14px;overflow:hidden;box-shadow:0 40px 90px -40px rgba(0,0,0,.9);background:#0a0c11;">
-      <div style="display:flex;align-items:center;gap:7px;padding:13px 16px;background:#12151d;border-bottom:1px solid #20252f;">
-        <span style="width:11px;height:11px;border-radius:50%;background:#2c313d;"></span>
-        <span style="width:11px;height:11px;border-radius:50%;background:#2c313d;"></span>
-        <span style="width:11px;height:11px;border-radius:50%;background:#2c313d;"></span>
-        <span style="margin-left:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6a7184;background:#0d1016;border:1px solid #20252f;padding:4px 12px;border-radius:6px;">app.you.dev/skopia</span>
-      </div>
-      <div style="padding:26px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#fff;">Overview</div>
-          <span style="display:flex;align-items:center;gap:7px;font-size:12px;color:#2bd888;background:rgba(43,216,136,.1);padding:6px 12px;border-radius:8px;">
-            <span style="width:7px;height:7px;border-radius:50%;background:#2bd888;animation:skopiaPulse 1.6s infinite;"></span> 24 online
-          </span>
-        </div>
-        <div class="shot-metrics" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;">
-          <div style="background:#12151d;border:1px solid #20252f;border-radius:10px;padding:15px 17px;">
-            <div style="font-size:12px;color:#8b92a4;margin-bottom:8px;">Visitors</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:#fff;">48.2K</div>
-          </div>
-          <div style="background:#12151d;border:1px solid #20252f;border-radius:10px;padding:15px 17px;">
-            <div style="font-size:12px;color:#8b92a4;margin-bottom:8px;">Pageviews</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:#fff;">91.7K</div>
-          </div>
-          <div style="background:#12151d;border:1px solid #20252f;border-radius:10px;padding:15px 17px;">
-            <div style="font-size:12px;color:#8b92a4;margin-bottom:8px;">Single-Page Visits</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:#fff;">38%</div>
-          </div>
-          <div style="background:#12151d;border:1px solid #20252f;border-radius:10px;padding:15px 17px;">
-            <div style="font-size:12px;color:#8b92a4;margin-bottom:8px;">Views / Visitor</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:#fff;">1.9</div>
-          </div>
-        </div>
-        <div style="background:#12151d;border:1px solid #20252f;border-radius:10px;padding:20px;">
-          <svg viewBox="0 0 1080 220" preserveAspectRatio="none" style="width:100%;height:200px;display:block;">
-            <defs>
-              <linearGradient id="shot" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#4d86ff" stop-opacity=".3"></stop>
-                <stop offset="1" stop-color="#4d86ff" stop-opacity="0"></stop>
-              </linearGradient>
-            </defs>
-            <line x1="0" y1="50" x2="1080" y2="50" stroke="#1a1f2a"></line>
-            <line x1="0" y1="110" x2="1080" y2="110" stroke="#1a1f2a"></line>
-            <line x1="0" y1="170" x2="1080" y2="170" stroke="#1a1f2a"></line>
-            <path d="M0,150 L90,132 L180,162 L270,104 L360,128 L450,82 L540,114 L630,64 L720,98 L810,52 L900,86 L990,44 L1080,72 L1080,190 L0,190 Z" fill="url(#shot)"></path>
-            <path d="M0,150 L90,132 L180,162 L270,104 L360,128 L450,82 L540,114 L630,64 L720,98 L810,52 L900,86 L990,44 L1080,72" fill="none" stroke="#4d86ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
-          </svg>
-        </div>
-      </div>
+      <img
+        src="/dashboard-overview.png"
+        width="1440"
+        height="900"
+        loading="lazy"
+        decoding="async"
+        alt="Skopia's overview dashboard — pageviews, visitors, top pages, sources and devices for a live site, rendered with real traffic, not mock data."
+        style="display:block;width:100%;height:auto;"
+      />
     </div>
   </div>
 </div>
@@ -60,6 +22,5 @@
 <style>
   @media (max-width: 768px) {
     .shot-inner { padding: 56px 20px !important; }
-    .shot-metrics { grid-template-columns: repeat(2, 1fr) !important; }
   }
 </style>
