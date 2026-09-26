@@ -42,7 +42,7 @@ import '../styles/site.css';
   <body>
     <slot />
     <!-- External same-origin script (CSP script-src 'self'); is:inline keeps Astro from bundling it.
-         Drives the live feed, pageview trace, script ruler, calculator, FAQ and nav menu. -->
+         Drives the live feed, pageview trace, script ruler, calculator, section plays and nav menu. -->
     <script is:inline src="/scripts/site.js" defer></script>
   </body>
 </html>

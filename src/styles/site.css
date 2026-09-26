@@ -444,3 +444,5 @@ input[type=range]:focus-visible{outline-offset:4px}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+/* Controls that only work with JS stay hidden without it (like .menu-btn). */
+html:not(.js) .pause,html:not(.js) #dissect{display:none}

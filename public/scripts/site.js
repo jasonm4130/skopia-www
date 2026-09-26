@@ -325,7 +325,9 @@
         en.target.classList.add('play');
         if (en.target._cb) en.target._cb(en.target);
       });
-    }, { threshold: 0.3 });
+    // Trigger when a section's top reaches the upper three-quarters of the viewport, not on a
+    // visible-ratio threshold: tall stacked sections (e.g. #how on a phone) can never be 30% visible.
+    }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
     plays.forEach(function (p) {
       var el = $(p[0]); if (!el) return;
       el._cb = p[1]; io.observe(el);
