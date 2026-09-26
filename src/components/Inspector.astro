@@ -1,0 +1,59 @@
+<!-- INSPECTOR: one pageview, traced -->
+<section class="inspector" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="insp-head">
+      <h2 id="how-h">What happens to one pageview</h2>
+      <p>The script sends three fields on every pageview, plus the referrer and screen width when there is one. A Worker in your account derives a few more, drops everything that could identify a person, and writes one row to Analytics Engine. Nothing calls home to the Skopia project, and CI checks that on every build.</p>
+      <div class="insp-ctl">
+        <button class="btn btn-disp" type="button" id="dissect">Trace the latest event</button>
+        <span class="insp-now mono" id="insp-now" aria-live="polite">Showing: AU, /pricing</span>
+      </div>
+    </div>
+
+    <div class="track" id="track">
+      <div class="rail" aria-hidden="true"><span class="rail-line"></span><span class="pkt" id="pkt"><i></i></span></div>
+      <ol class="stations">
+        <li class="station">
+          <span class="node" aria-hidden="true"></span>
+          <h3 class="st-h"><span class="st-where">In the browser</span>POST /e</h3>
+<pre class="json mono"><code>&#123;
+  "t": "pv",
+  "s": "default",
+  "p": "<b data-f="path">/pricing</b>",
+<span class="jr">  "r": "<b data-f="rfull">https://news.ycombinator.com/</b>",
+</span>  "w": <b data-f="w">1440</b>
+&#125;</code></pre>
+          <p class="st-note"><span class="mono">t</span>, <span class="mono">s</span> and <span class="mono">p</span> are always sent; <span class="mono">r</span> only with the first hit after a page load. The script never reads or writes cookies, localStorage or sessionStorage.</p>
+        </li>
+        <li class="station">
+          <span class="node" aria-hidden="true"></span>
+          <h3 class="st-h"><span class="st-where">Your Worker</span>Derive, then drop</h3>
+          <dl class="derive mono">
+            <div class="drop"><dt>ip</dt><dd><s>203.0.113.24</s><em>hashed, never stored</em></dd></div>
+            <div class="drop"><dt>cf.city</dt><dd><s data-f="city">Sydney</s><em>never stored</em></dd></div>
+            <div><dt>cf.country</dt><dd data-f="cc">AU</dd></div>
+            <div><dt>user-agent</dt><dd data-f="ua">Chrome · macOS · desktop</dd></div>
+            <div><dt>referrer</dt><dd data-f="ref">news.ycombinator.com</dd></div>
+            <div><dt>vid</dt><dd><span data-f="vid">3f9c01a2e4b7d855</span><em>daily-salted HMAC</em></dd></div>
+          </dl>
+        </li>
+        <li class="station">
+          <span class="node" aria-hidden="true"></span>
+          <h3 class="st-h"><span class="st-where">Your Analytics Engine</span>One row</h3>
+          <table class="row-t mono">
+            <tbody>
+              <tr><th scope="row">pathname</th><td data-f="path">/pricing</td></tr>
+              <tr><th scope="row">referrerHost</th><td data-f="ref">news.ycombinator.com</td></tr>
+              <tr><th scope="row">country</th><td data-f="cc">AU</td></tr>
+              <tr><th scope="row">deviceClass</th><td data-f="dev">desktop</td></tr>
+              <tr><th scope="row">browser</th><td data-f="br">Chrome</td></tr>
+              <tr><th scope="row">vid</th><td data-f="vid">3f9c01a2e4b7d855</td></tr>
+            </tbody>
+          </table>
+          <p class="st-note">The <span class="mono">SiteLive</span> Durable Object bumps the live count and writes an exact daily rollup to D1.</p>
+        </li>
+      </ol>
+    </div>
+    <p class="insp-foot">The visitor hash rotates every UTC day, so the same person tomorrow counts as someone new. It is also why Skopia can't report monthly uniques.</p>
+  </div>
+</section>

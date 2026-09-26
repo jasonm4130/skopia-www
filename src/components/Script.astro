@@ -1,0 +1,30 @@
+<!-- THE SCRIPT -->
+<section class="sec script" id="script" aria-labelledby="script-h">
+  <div class="wrap">
+    <h2 id="script-h" class="h-wide">The tracking script is <span class="mono num" id="byte-count">554</span>&nbsp;bytes</h2>
+    <figure class="ruler" id="ruler">
+      <div class="r-top mono" aria-hidden="true">
+        <span class="r-note r-note-us"><b>554 B</b> gzipped</span>
+        <span class="r-note r-note-cap">2,048 B: CI fails the build past here</span>
+      </div>
+      <div class="r-track" aria-hidden="true">
+        <div class="r-fill"><i class="r-h"></i><i class="r-t"></i></div>
+      </div>
+      <div class="r-scale mono" aria-hidden="true">
+        <span style="left:0">0</span><span style="left:25%">512</span><span style="left:50%">1,024</span><span style="left:75%">1,536</span><span style="left:100%">2,048</span>
+      </div>
+      <figcaption class="r-cap">
+        <span>The bar is to scale against the 2&nbsp;KB budget in <span class="mono">scripts/check-script-size.mjs</span>.</span>
+        <span class="mono"><i class="k k-h" aria-hidden="true"></i>gzip header <span class="hex">1f 8b 08 00 00 00 00 00 02 13</span></span>
+        <span class="mono"><i class="k k-t" aria-hidden="true"></i>CRC32 + length <span class="hex">1b 1d e9 ab b0 03 00 00</span></span>
+      </figcaption>
+    </figure>
+    <div class="script-row">
+<pre class="snippet mono"><code><span class="tag">&lt;script</span> <span class="at">defer</span>
+  <span class="at">src</span>=<span class="st">"https://skopia.you.workers.dev/skopia.js"</span>
+  <span class="at">data-site</span>=<span class="st">"default"</span>
+  <span class="at">data-endpoint</span>=<span class="st">"https://skopia.you.workers.dev/e"</span><span class="tag">&gt;&lt;/script&gt;</span></code></pre>
+      <p>Paste it into your page's head. It loads with <code class="mono">defer</code>, so it never blocks the first paint, and it follows client-side route changes on its own. Custom events are one call: <code class="mono">skopia.track(name, props)</code>.</p>
+    </div>
+  </div>
+</section>

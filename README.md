@@ -21,13 +21,12 @@ pnpm preview    # wrangler dev — Cloudflare-accurate preview that DOES apply _
 ## How it's built
 
 - **Static only** — `output: 'static'`, no SSR adapter.
-- **Design tokens** (`public/tokens.css`) and **fonts** (`public/fonts/`) are **copied** from
-  the product repo (`src/shared/tokens.css` is the source of truth). Edit them there and
-  re-copy; don't edit the copies here.
+- **Design** lives in `src/styles/site.css` (its own palette, not the product's tokens).
+  **Fonts** (`public/fonts/`) are **copied** from the product repo; edit them there and re-copy.
 - **CSP** is set in the committed `public/_headers` (Cloudflare honors it for static assets):
-  `script-src 'self'` (the calculator/FAQ JS is the external `public/scripts/calculator.js` —
-  no inline scripts), `style-src 'self' 'unsafe-inline'` (the design uses inline style
-  attributes, which can't be hashed). `pnpm check:csp` enforces this in CI.
+  `script-src 'self'` (all page JS is the external `public/scripts/site.js` — no inline
+  scripts), `style-src 'self' 'unsafe-inline'` (a few inline style attributes remain, which
+  can't be hashed). `pnpm check:csp` enforces this in CI.
 
 ## Deploy (maintainer-only)
 

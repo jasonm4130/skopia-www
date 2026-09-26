@@ -1,0 +1,32 @@
+<!-- COMPARE -->
+<section class="sec compare" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="cmp-head">
+      <h2 id="cmp-h">How it compares</h2>
+      <p>Hosted analytics is effortless but keeps your data. Classic self-hosting keeps your data but hands you a server. Skopia is built from Cloudflare parts you already rely on: Workers, Analytics Engine, D1, KV and Durable Objects.</p>
+    </div>
+    <table class="cmp">
+      <thead>
+        <tr><td></td><th scope="col">Skopia</th><th scope="col">Hosted SaaS</th><th scope="col">Other self-host</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Raw data lives in your account</th><td data-l="Skopia">Yes</td><td data-l="Hosted SaaS">No</td><td data-l="Other self-host">Yes</td></tr>
+        <tr><th scope="row">Server or database to run</th><td data-l="Skopia">None</td><td data-l="Hosted SaaS">None</td><td data-l="Other self-host">Yours</td></tr>
+        <tr><th scope="row">Cookieless, no consent banner</th><td data-l="Skopia">Yes</td><td data-l="Hosted SaaS">Yes</td><td data-l="Other self-host">Varies</td></tr>
+        <tr><th scope="row">Monthly unique visitors</th><td data-l="Skopia">No, the hash resets daily</td><td data-l="Hosted SaaS">Varies</td><td data-l="Other self-host">Varies</td></tr>
+        <tr><th scope="row">Import past analytics</th><td data-l="Skopia">Not yet</td><td data-l="Hosted SaaS">Varies</td><td data-l="Other self-host">Varies</td></tr>
+        <tr><th scope="row">Cost at scale</th><td data-l="Skopia" class="mono">~$5/mo</td><td data-l="Hosted SaaS" class="mono">$19&ndash;90/mo</td><td data-l="Other self-host">A server, plus your time</td></tr>
+      </tbody>
+    </table>
+
+    <div class="limits">
+      <h3>What it won't do</h3>
+      <ul>
+        <li><strong>Keep raw events past 90 days.</strong> That is Cloudflare's cap on Analytics Engine. Daily rollups in D1 are kept for as long as you like.</li>
+        <li><strong>Count monthly uniques.</strong> The visitor hash resets every day by design.</li>
+        <li><strong>Run anywhere but Cloudflare.</strong> It is built from Cloudflare primitives. If you need another cloud, this isn't it.</li>
+        <li><strong>Import your history.</strong> There is no importer yet. Run it alongside Google Analytics or Plausible while you switch.</li>
+      </ul>
+    </div>
+  </div>
+</section>

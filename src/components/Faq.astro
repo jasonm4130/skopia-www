@@ -1,66 +1,30 @@
----
-// FAQ data — ported from src/marketing/index.ts. First item renders open (matches design);
-// the accordion toggling lives in /scripts/calculator.js.
-const FAQ = [
-  {
-    q: 'Where does my data live?',
-    a: 'In your own Cloudflare account. Raw events go to Workers Analytics Engine and daily rollups to a D1 database you provision — Skopia has no central server and never sees your visitors, so the data never leaves your infrastructure.',
-  },
-  {
-    q: 'Is it really compliant without a consent banner?',
-    a: 'Skopia sets no cookies, stores no personal data by default, and never tracks people across sites — so in most jurisdictions no consent banner is required. As always, confirm your specific obligations with counsel.',
-  },
-  {
-    q: 'What does it actually cost to run?',
-    a: "The software is free and AGPL-3.0 licensed. You pay Cloudflare directly — $0 on the free tier (roughly up to ~0.9M pageviews/mo), and around $5/mo on Cloudflare's Workers Paid plan once you pass that ceiling.",
-  },
-  {
-    q: 'How big is the tracking script?',
-    a: "554 bytes gzipped (about 0.6 KB). It loads deferred and never blocks rendering — your Lighthouse score won't notice it.",
-  },
-  {
-    q: 'Can I migrate from Google Analytics or Plausible?',
-    a: "Not today — Skopia starts collecting from the day you deploy; there's no historical importer yet. You can run it alongside your current analytics during the switch.",
-  },
-  {
-    q: 'Do I have to manage a database?',
-    a: "No. The one-click Deploy to Cloudflare button provisions Cloudflare D1 (and the rest of the stack) for you. There's nothing to patch, scale, or back up — Cloudflare handles the infrastructure.",
-  },
-];
----
-
-<!-- ===== FAQ ===== -->
-<div id="faq" style="background:#0c0e14;border-top:1px solid #161a22;">
-  <div class="faq-inner" style="max-width:820px;margin:0 auto;padding:96px 32px;">
-    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:34px;letter-spacing:-.02em;color:#fff;margin:0 0 44px;text-align:center;">Questions, answered.</h2>
-    <div style="display:flex;flex-direction:column;gap:12px;">
-      {
-        FAQ.map((item, i) => (
-          <div class="faq-item" style="background:#12151d;border:1px solid #20252f;border-radius:12px;overflow:hidden;">
-            <div class="faq-btn" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;user-select:none;">
-              <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16.5px;color:#fff;">{item.q}</span>
-              <span
-                class="faq-icon"
-                style={`font-family:'Space Grotesk',sans-serif;font-size:22px;${i === 0 ? 'color:#4d86ff;transform:rotate(45deg);' : 'color:#7b8296;'}transition:transform .2s,color .2s;line-height:1;`}
-              >
-                +
-              </span>
-            </div>
-            <div
-              class="faq-body"
-              style={`display:${i === 0 ? 'block' : 'none'};padding:0 24px 22px;font-size:14.5px;line-height:1.65;color:#9aa1b2;`}
-            >
-              {item.a}
-            </div>
-          </div>
-        ))
-      }
-    </div>
+<!-- FAQ -->
+<section class="sec faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-col">
+    <h2 id="faq-h" class="h-label">Questions before you deploy</h2>
+    <details open>
+      <summary>Where does my data live?</summary>
+      <p>In your own Cloudflare account. Raw events go to Workers Analytics Engine and daily rollups to a D1 database you provision. Skopia has no central server and never sees your visitors, so the data never leaves your infrastructure.</p>
+    </details>
+    <details>
+      <summary>Do I need a consent banner?</summary>
+      <p>Skopia sets no cookies, stores no personal data by default, and never tracks people across sites, so in most jurisdictions no consent banner is required. Confirm your specific obligations with counsel.</p>
+    </details>
+    <details>
+      <summary>What does it cost to run?</summary>
+      <p>The software is free and AGPL-3.0 licensed. You pay Cloudflare directly: $0 on the free tier (roughly up to 0.9M pageviews a month), and around $5 a month on Cloudflare's Workers Paid plan once you pass that ceiling.</p>
+    </details>
+    <details>
+      <summary>How big is the tracking script?</summary>
+      <p>554 bytes gzipped, about 0.6 KB. It loads deferred and never blocks rendering.</p>
+    </details>
+    <details>
+      <summary>Can I migrate from Google Analytics or Plausible?</summary>
+      <p>Not today. Skopia starts collecting from the day you deploy and there's no historical importer yet. You can run it alongside your current analytics during the switch.</p>
+    </details>
+    <details>
+      <summary>Do I have to manage a database?</summary>
+      <p>No. The Deploy to Cloudflare button provisions D1 and the rest of the stack for you. There's nothing to patch, scale or back up.</p>
+    </details>
   </div>
-</div>
-
-<style>
-  @media (max-width: 768px) {
-    .faq-inner { padding: 64px 20px !important; }
-  }
-</style>
+</section>

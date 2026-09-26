@@ -5,15 +5,17 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Page not found — Skopia"
+  title="Page not found · Skopia"
   description="The page you were looking for doesn't exist."
 >
   <Nav />
-  <main style="max-width:1180px;margin:0 auto;padding:140px 32px;text-align:center;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#7b8296;margin-bottom:14px;">Error 404</div>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:56px;letter-spacing:-.03em;color:#fff;margin:0 0 18px;line-height:1.05;">Page not found.</h1>
-    <p style="font-size:18px;color:#9aa1b2;margin:0 0 36px;">That page doesn&apos;t exist — but your analytics still can.</p>
-    <a href="/" style="display:inline-block;background:#4d86ff;color:#fff;padding:14px 26px;border-radius:10px;font-weight:600;font-size:16px;box-shadow:0 8px 26px rgba(77,134,255,.32);">Back to home &#8594;</a>
+  <main id="main" class="sec">
+    <div class="wrap" style="padding-block:96px 120px;">
+      <p class="mono" style="color:var(--ink-3);margin-bottom:16px;">404 · not found</p>
+      <h1 style="font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-.045em;max-width:14ch;margin-bottom:20px;">This page doesn&apos;t exist.</h1>
+      <p style="color:var(--ink-2);max-width:46ch;margin-bottom:36px;">It may have moved, or the link may be wrong. The home page has everything else.</p>
+      <a class="btn btn-ink" href="/"><span class="key-glyph" aria-hidden="true"></span>Back to the home page</a>
+    </div>
   </main>
   <Footer />
 </BaseLayout>
