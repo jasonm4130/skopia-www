@@ -310,6 +310,7 @@
     ['#ruler', function () { countTo($('#byte-count'), 554, 1500); }],
     ['.pricing'],
     ['.deploy'],
+    ['.principles'],
     ['#how', function () { run(false); }]
   ];
   // Plays arm on the first sign of a person (scroll, pointer, key), then run for every

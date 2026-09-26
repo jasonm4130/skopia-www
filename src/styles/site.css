@@ -90,7 +90,9 @@ code{font-family:var(--mono);font-size:.88em}
 /* ---------- hero ---------- */
 .hero{padding:clamp(40px,7vw,96px) 0 clamp(56px,7vw,104px)}
 .hero-top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:clamp(36px,5vw,60px)}
-.hero h1{font-size:clamp(42px,6.2vw,86px);line-height:.97;letter-spacing:-.047em;font-weight:600;text-wrap:balance}
+.hero h1{font-size:clamp(38px,5.6vw,78px);line-height:.97;letter-spacing:-.047em;font-weight:600;text-wrap:balance}
+/* one sentence per line; each wraps on its own only when the column is too narrow */
+.hero h1 span{display:block}
 .lede{font-size:18px;line-height:1.6;color:var(--ink-2);max-width:31em}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:30px}
 
@@ -268,6 +270,31 @@ code{font-family:var(--mono);font-size:.88em}
 .cmp tbody th{font-weight:500;color:var(--ink);width:32%}
 .cmp tbody th,.cmp td{box-sizing:border-box}
 .cmp td{color:var(--ink-2);width:22.6%}
+/* ---------- will / won't (principles) ---------- */
+.principles{border-bottom:1px solid var(--rule)}
+.pr-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px clamp(40px,7vw,112px)}
+.principles h2{margin-bottom:28px}
+.will,.wont{border-bottom:1px solid var(--rule)}
+.will li{padding:18px 0;border-top:1px solid var(--rule);color:var(--ink-2);font-size:16px;line-height:1.55}
+.will strong{display:block;color:var(--ink);font-weight:600;margin-bottom:2px;letter-spacing:-.01em}
+.wont li{padding:16px 0 17px;border-top:1px solid var(--rule)}
+.wont small{display:block;font-size:14.5px;line-height:1.5;color:var(--ink-3);margin-top:4px}
+.strike{position:relative;display:inline-block;font:500 clamp(21px,2vw,26px)/1.25 var(--sans);letter-spacing:-.025em;color:var(--ink)}
+/* Ink, not lime: lime is reserved for live data on the displays. Drawn by default;
+   .play re-draws the strikes in sequence once the section is seen. */
+.strike::after{--r:-1deg;content:"";position:absolute;left:-3px;right:-3px;top:53%;height:2px;background:var(--ink);transform-origin:left center;transform:rotate(var(--r));transition:transform .25s var(--ease)}
+.wont li:nth-child(even) .strike::after{--r:.7deg}
+.wont li:hover .strike::after{transform:rotate(var(--r)) scaleY(2)}
+@keyframes strike-in{from{transform:rotate(var(--r)) scaleX(0)}to{transform:rotate(var(--r)) scaleX(1)}}
+/* backwards fill: hidden during the stagger delay, then hands back to the base rule so hover still works */
+.principles.play .strike::after{animation:strike-in .55s var(--ease) backwards}
+.principles.play li:nth-child(1) .strike::after{animation-delay:.05s}
+.principles.play li:nth-child(2) .strike::after{animation-delay:.17s}
+.principles.play li:nth-child(3) .strike::after{animation-delay:.29s}
+.principles.play li:nth-child(4) .strike::after{animation-delay:.41s}
+.principles.play li:nth-child(5) .strike::after{animation-delay:.53s}
+@media (max-width:860px){.pr-cols{grid-template-columns:minmax(0,1fr)}}
+
 .limits{margin-top:clamp(64px,8vw,104px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px clamp(32px,6vw,96px)}
 .limits h3{font-size:clamp(24px,2.4vw,30px);letter-spacing:-.03em;line-height:1.1}
 .limits ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 48px}

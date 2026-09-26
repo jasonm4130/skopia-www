@@ -10,7 +10,7 @@ of the product repo's workspace, so the product's one-click Deploy button stays 
 - **`../analytics`** — the Skopia **product** repo (Cloudflare Worker + TypeScript; GitHub:
   `jasonm4130/skopia`). It serves the app/collector at `app.skopia.dev`. The architecture
   decisions that govern this repo live in its `docs/decisions/` (ADRs **0007** marketing
-  split, **0008** no build orchestrator, **0009** token sharing). Local cross-repo file access
+  split, **0008** no build orchestrator, **0009** token sharing (no longer applied here, see below)). Local cross-repo file access
   is wired via `.claude/settings.local.json` (gitignored).
 
 ## Conventions
@@ -18,8 +18,8 @@ of the product repo's workspace, so the product's one-click Deploy button stays 
 - **The marketing site has its own design** (the "live system" redesign): palette, type scale and
   motion live in `src/styles/site.css`, and it is no longer a port of the product repo's
   `src/marketing/index.ts`. Lime (`--live`) is reserved for live data on the dark "display"
-  panels; keep it off everything else. `public/tokens.css` is still a copy of the product's
-  tokens (ADR-0009) but the site no longer links it.
+  panels; keep it off everything else. The product's shared `tokens.css` (ADR-0009) is no
+  longer used here; the app will be aligned to this design later.
 - **Fonts are copied, not authored here.** `public/fonts/` + `public/fonts.css` come from the
   product repo; edit there and re-copy.
 - **Generated SVG.** `WorldMap.astro` and `CostChart.astro` are generated markup (dot map, cost
