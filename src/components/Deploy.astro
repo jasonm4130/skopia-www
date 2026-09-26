@@ -1,0 +1,22 @@
+<!-- DEPLOY -->
+<section class="sec deploy" aria-labelledby="deploy-h">
+  <div class="wrap">
+    <h2 id="deploy-h" class="h-big">Deploy it to your account</h2>
+    <div class="deploy-grid">
+      <div class="deploy-l">
+        <p>The button forks the repository and creates everything below inside your Cloudflare account. Then it asks for four secrets; the <a href="https://github.com/jasonm4130/skopia#readme">install guide</a> shows how to generate them.</p>
+        <div class="actions">
+          <a class="btn btn-ink" href="https://deploy.workers.cloudflare.com/?url=https://github.com/jasonm4130/skopia"><span class="key-glyph" aria-hidden="true"></span>Deploy to Cloudflare</a>
+          <a class="btn-link" href="https://github.com/jasonm4130/skopia">Read the source <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <ol class="manifest" id="manifest" aria-label="What the button creates">
+        <li><span class="mf-k mono">Worker</span><span class="mf-v">Collector, dashboard and share links, in one</span></li>
+        <li><span class="mf-k mono">Analytics Engine</span><span class="mf-v">Raw events, 90 days</span></li>
+        <li><span class="mf-k mono">D1</span><span class="mf-v">Sites, users and daily rollups</span></li>
+        <li><span class="mf-k mono">KV</span><span class="mf-v">Response cache and the daily salt</span></li>
+        <li><span class="mf-k mono">Durable Object</span><span class="mf-v">SiteLive: live counts, exact rollups</span></li>
+      </ol>
+    </div>
+  </div>
+</section>

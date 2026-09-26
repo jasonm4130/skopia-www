@@ -1,7 +1,7 @@
 # Cloudflare Workers Static Assets honors this file for static asset responses.
 # CSP is set HERE (not via Astro's security.csp): the page uses inline style=""
 # attributes, which style hashes can't cover, so style-src needs 'unsafe-inline'.
-# Script execution stays strict — script-src 'self', no inline JS (calculator.js is
+# Script execution stays strict — script-src 'self', no inline JS (site.js is
 # an external same-origin file).
 /*
   X-Frame-Options: DENY
@@ -12,9 +12,6 @@
 
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
-
-/tokens.css
-  Cache-Control: public, max-age=86400
 
 /fonts.css
   Cache-Control: public, max-age=86400

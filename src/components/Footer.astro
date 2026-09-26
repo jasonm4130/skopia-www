@@ -1,44 +1,24 @@
----
-import SkopiaMark from './SkopiaMark.astro';
----
-
-<!-- ===== FOOTER ===== -->
-<div style="border-top:1px solid #161a22;background:#0a0c11;">
-  <div class="footer-top" style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;padding:44px 32px;flex-wrap:wrap;gap:32px;">
-    <div style="max-width:280px;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-        <SkopiaMark size="sm" />
-        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff;">Skopia</span>
-      </div>
-      <p style="font-size:13.5px;color:#7b8296;line-height:1.6;margin:0;">Open-source, privacy-first web analytics that runs on your own Cloudflare account.</p>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="/" aria-label="Skopia home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Skopia</span></a>
+      <p>Open-source web analytics that runs on your own Cloudflare account.</p>
     </div>
-    <div class="footer-links" style="display:flex;gap:64px;">
-      <div style="display:flex;flex-direction:column;gap:11px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#7b8296;margin-bottom:4px;">Product</span>
-        <a href="#features" style="font-size:13.5px;color:#9aa1b2;">Features</a>
-        <a href="#pricing" style="font-size:13.5px;color:#9aa1b2;">Pricing</a>
-        <a href="https://app.skopia.dev/share/shr_UW5RM-IF-36Nitykw3ipt40Rm17Ye0nC8v67K2JsDNs" style="font-size:13.5px;color:#9aa1b2;">Live demo</a>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:11px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#7b8296;margin-bottom:4px;">Open source</span>
-        <a href="https://github.com/jasonm4130/skopia" style="font-size:13.5px;color:#9aa1b2;">GitHub</a>
-        <a href="https://github.com/jasonm4130/skopia#readme" style="font-size:13.5px;color:#9aa1b2;">Documentation</a>
-        <a href="https://github.com/jasonm4130/skopia/releases" style="font-size:13.5px;color:#9aa1b2;">Changelog</a>
-      </div>
-    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <ul>
+        <li><a href="https://app.skopia.dev/share/shr_UW5RM-IF-36Nitykw3ipt40Rm17Ye0nC8v67K2JsDNs">Live demo</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://github.com/jasonm4130/skopia">GitHub</a></li>
+        <li><a href="https://github.com/jasonm4130/skopia#readme">Documentation</a></li>
+        <li><a href="https://github.com/jasonm4130/skopia/releases">Changelog</a></li>
+      </ul>
+    </nav>
   </div>
-  <div style="border-top:1px solid #161a22;">
-    <div class="footer-bottom" style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;padding:20px 32px;font-size:12.5px;color:#5a6072;">
-      <span>&copy; 2026 Skopia &middot; AGPL-3.0 licensed</span>
-      <span style="font-family:'JetBrains Mono',monospace;">cookieless &middot; no consent banner required</span>
-    </div>
+  <div class="wrap foot-base mono">
+    <span>&copy; 2026 Skopia &middot; AGPL-3.0</span>
+    <span>This page sets no cookies either.</span>
   </div>
-</div>
-
-<style>
-  @media (max-width: 768px) {
-    .footer-top { flex-direction: column; gap: 32px !important; padding: 40px 20px !important; }
-    .footer-links { gap: 40px !important; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px !important; padding: 20px 20px !important; }
-  }
-</style>
+</footer>
